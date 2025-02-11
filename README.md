@@ -1,100 +1,69 @@
-<<<<<<< HEAD
-# fullstack-qap-2
-=======
-# Math Competition App
+Math Quiz Web App
 
-This is the starting point for the **Math Competition App** assignment. The goal of this project is to create a simple web application where users can practice solving math questions, track their streak of correct answers, and view leaderboards.
+A fun and interactive math quiz built with Node.js and Express.js! 🎯
 
-## Features
-- **Home Page**: 
-  - Start a new quiz or view the leaderboards.
-  - Display the user's last recorded streak or a message indicating no streak exists.
-  
-- **Quiz Page**: 
-  - Display math questions for the user to answer.
-  - Track the user's streak of correct answers.
 
-- **Quiz Completion Page**:
-  - Display the current streak.
-  - Allow the user to start a new quiz or return to the home page.
 
-- **Leaderboards Page**:
-  - Display the top 10 streaks, including the number of correct answers and when the streak was obtained.
+📌 Project Description
 
-## Setup Instructions
+This is a simple math quiz web application where users can test their arithmetic skills. The app dynamically generates math questions and tracks the user’s streak. Built using Node.js, Express.js, and EJS templates, it offers a basic yet engaging experience.
 
-### Prerequisites
-- [Node.js](https://nodejs.org) installed on your machine.
-- A code editor, such as [VSCode](https://code.visualstudio.com/).
+🚀 Features
 
-## How to Use this Template
+✅ Randomly generated math problems (+, -, ×, ÷)
+✅ Streak tracking for consecutive correct answers
+✅ Dynamic EJS-based UI with an improved modern design
+✅ User-friendly form submission
+✅ Fully responsive and mobile-friendly
 
-This repository is set up as a **GitHub template** to help you quickly create your own version of the **Math Competition App**.
+🛠️ Tech Stack
 
-### Steps to Create Your Own Repository
+Backend: Node.js, Express.js
+Frontend: HTML, CSS, EJS
+Testing: Jest (for unit testing)
+🎮 How to Run the Project Locally
 
-1. **Click the "Use this template" button** at the top of this page on GitHub.
-   
-1. **Name your new repository** and choose its visibility (public or private).
+1️⃣ Clone the Repository
+git clone https://github.com/NSparkes95/fullstack-qap-2.git
+cd fullstack-qap-2
+2️⃣ Install Dependencies
+npm install
+3️⃣ Run the Server
+npm start
+Then, open http://localhost:3000/ in your browser.
 
-1. Once your repository is created, **clone your new repo** to your local machine:
-    ```bash
-    git clone <your-new-repo-url>
-    ```
+📷 Screenshots
 
-1. Navigate into the project directory and install the necessary dependencies:
-    ```bash
-    cd <your-new-repo-name>
-    npm install
-    ```
-  
-1. **Run the app:**
-    ```bash
-    npm start
-    ```
-    This will start the server at `http://localhost:3000/`.
+🖼️ (Add screenshots of your quiz UI here!)
 
-1. **Run tests:**
-    ```bash
-    npm test
-    ```
-    This will run the unit tests for the application.
+🧪 Running Tests
 
-1. You can now begin working on your project, adding your own code and committing your changes as you go:
-    ```bash
-    git add .
-    git commit -m "First commit"
-    git push origin main
-    ```
+To run unit tests, use:
 
-By using this template, you'll have the project structure and initial setup ready to go, so you can focus on building the functionality!
+npm test
+🌟 Future Improvements
 
-## Development Guidelines
+Add difficulty levels (easy, medium, hard)
+Track user scores in a database
+Implement a leaderboard system
+Improve UI with animations
+🤝 Contributing
 
-1. **Homepage**:
-   - The homepage links should bring you to a new quiz or the leaderboards.
-   - Show the last recorded streak or a message indicating there was no streak.
-   
-2. **Quiz Functionality**:
-   - Implement logic to present math questions.
-   - Check the correctness of user answers and update the streak.
-   
-3. **Leaderboards**:
-   - Track and display the top 10 streaks in memory (no database required).
+Contributions are welcome! Feel free to submit a PR. Before contributing, please check the Issues section.
 
-4. **Testing**:
-   - Write unit tests for:
-     - Generating a new math question.
-     - Checking if the user's answer is correct or incorrect.
-   - Make sure tests pass before submitting the assignment.
+📝 License
 
-## Submission Guidelines
-- Submit a link to your GitHub repository through the Teams assignment.
-- Ensure all required functionality is implemented and working.
-- The project should run with `npm start` and all tests should pass with `npm test`.
+This project is licensed under the MIT License.
 
-## Notes
-- Extra npm packages are allowed (except for templating engines like React).
-- All pages should use **.ejs templates**.
-- No persistent data storage is required; all data can be stored in memory.
->>>>>>> 3468b1e (Initial commit)
+📩 Contact
+
+Nicole Sparkes
+📧 Email: (Add your email here, if comfortable sharing)
+🔗 GitHub: NSparkes95
+
+🚀 Ready to Challenge Your Math Skills? Try It Out Now!
+📌 Next Steps:
+
+Copy and paste this into README.md
+Modify it as needed
+Commit and push to GitHub! 🚀🔥
