@@ -1,4 +1,10 @@
+// Description: This file contains the main server code for the math quiz application.
+// Author: Nicole Sparkes
+// Date:
+
 const express = require('express');
+const { getQuestion, isCorrectAnswer } = require('./utils/mathUtilities');
+
 const app = express();
 const port = 3000;
 
@@ -7,26 +13,45 @@ app.use(express.urlencoded({ extended: true })); // For parsing form data
 app.use(express.static('public')); // To serve static files (e.g., CSS)
 
 
+// In-memory data storage
+let currentQuestion = getQuestion();
+let currentStreak = 0;
+let lastStreak = 0;
+
+
 //Some routes required for full functionality are missing here. Only get routes should be required
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index', { lastStreak });
 });
 
+// Quiz page route
 app.get('/quiz', (req, res) => {
-    res.render('quiz');
+    if (req.query.new === 'true') {
+        currentStreak = 0;
+        currentQuestion = getQuestion(); // Generate a new question
+    }
+    res.render('quiz', { question: currentQuestion.question, streak: currentStreak });
 });
 
 //Handles quiz submissions.
-app.post('/quiz', (req, res) => {
-    const { answer } = req.body;
-    console.log(`Answer: ${answer}`);
+app.post('/submit', (req, res) => {
+    const userAnswer = parseFloat(req.body.answer);
+    const isCorrect = isCorrectAnswer(currentQuestion, userAnswer);
 
-    //The `answer` variable will contain the value the user entered on the quiz page
-    //You must add the logic here to check if the answer is correct, then track the streak and redirect the user
-    //properly depending on whether or not they got the question right
+    if (isCorrect) {
+        currentStreak++;
+        currentQuestion = getQuestion();
+        res.redirect(`/quiz`);
+    } else {
+        lastStreak = currentStreak;
+        currentStreak = 0;
+        res.redirect('/completion');
+    }
+});
 
-    //By default we'll just redirect to the homepage again.
-    res.redirect('/');
+//Completion page route
+app.get('/completion', (req, res) => {
+    res.render('completion', { streak: lastStreak });
 });
 
 // Start the server

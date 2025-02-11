@@ -1,12 +1,22 @@
-<!-- The header ejs template is included to ensure our CSS and fonts are loaded -->
-<%- include('partials/header') %>
-    <main class="main-content index_container">
-        <h1>Welcome to the Math Competition App</h1>
-        <div class="navigation__container">
-            <a href="/quiz">
-                Start Quiz
-            </a>
-        </div>
-    </main>
-</body>
+<!--
+Description:
+Author: Nicole Sparkes
+Date:
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Math Quiz</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <h1>Math Quiz</h1>
+        <% if (lastStreak > 0) { %>
+            <p>Last Streak: <%= lastStreak %></p>
+          <% } else { %>
+            <p>No previous streak.</p>
+          <% } %>
+          <a href="/quiz?new=true">Start New Quiz</a>
+    </body>
 </html>
