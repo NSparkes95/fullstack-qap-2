@@ -11,17 +11,12 @@
   "license": "MIT",
   "devDependencies": {
     "ejs": "^3.1.10",
-<<<<<<< HEAD
-    "express": "^4.21.2",
-=======
     "express": "^4.21.0",
->>>>>>> 4a0ffb866a7f339dd14694e7ec0d6d59b8c1b837
     "jest": "^29.7.0"
   },
   "dependencies": {
     "@types/ejs": "^3.1.5",
     "@types/express": "^5.0.0",
-<<<<<<< HEAD
     "@types/jest": "^29.5.14",
     "body-parser": "^1.20.3"
   },
@@ -34,8 +29,8 @@
     "url": "https://github.com/NSparkes95/fullstack-qap-2/issues"
   },
   "homepage": "https://github.com/NSparkes95/fullstack-qap-2#readme"
-=======
+
     "@types/jest": "^29.5.14"
   }
->>>>>>> 4a0ffb866a7f339dd14694e7ec0d6d59b8c1b837
+
 }
