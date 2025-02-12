@@ -1,35 +1,74 @@
 const express = require('express');
+const fs = require('fs');
+const path = require('path');
+
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true })); // For parsing form data
 app.use(express.static('public')); // To serve static files (e.g., CSS)
 
+// Path to JSON file
+const dataFilePath = path.join(__dirname, 'data.json');
 
-//Some routes required for full functionality are missing here. Only get routes should be required
+// Function to read streak data
+const readData = () => {
+    if (!fs.existsSync(dataFilePath)) {
+        return { lastStreak: 0, currentStreak: 0 };
+    }
+    const rawData = fs.readFileSync(dataFilePath);
+    return JSON.parse(rawData);
+};
+
+// Function to write streak data
+const writeData = (data) => {
+    fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
+};
+
+// Load initial streak data
+let streakData = readData();
+
+// 🟢 Route: Home Page
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index', { lastStreak: streakData.lastStreak, currentStreak: streakData.currentStreak });
 });
 
+// 🟢 Route: Quiz Page
 app.get('/quiz', (req, res) => {
-    res.render('quiz');
+    // Generate a random math question
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    const correctAnswer = num1 + num2; // Addition question
+
+    res.render('quiz', { num1, num2, correctAnswer, currentStreak: streakData.currentStreak });
 });
 
-//Handles quiz submissions.
+// 🟢 Route: Handle Quiz Submission
 app.post('/quiz', (req, res) => {
-    const { answer } = req.body;
-    console.log(`Answer: ${answer}`);
+    const { answer, correctAnswer } = req.body;
+    let userAnswer = parseInt(answer);
+    let correct = parseInt(correctAnswer);
 
-    //The `answer` variable will contain the value the user entered on the quiz page
-    //You must add the logic here to check if the answer is correct, then track the streak and redirect the user
-    //properly depending on whether or not they got the question right
+    if (userAnswer === correct) {
+        streakData.currentStreak++;
+        res.send(`<script>alert("Correct!"); window.location.href = "/";</script>`);
+    } else {
+        streakData.lastStreak = streakData.currentStreak;
+        streakData.currentStreak = 0;
+        res.send(`<script>alert("Incorrect. The correct answer was ${correct}."); window.location.href = "/";</script>`);
+    }
 
-    //By default we'll just redirect to the homepage again.
-    res.redirect('/');
+    // Save updated streak data
+    writeData(streakData);
 });
 
-// Start the server
+// 🟢 Route: Data Page
+app.get('/data', (req, res) => {
+    res.render('data', { lastStreak: streakData.lastStreak, currentStreak: streakData.currentStreak });
+});
+
+// Start server
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });

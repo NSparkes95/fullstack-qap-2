@@ -1,69 +1,60 @@
-Math Quiz Web App
+📌 Math Quiz Application
+A web-based math quiz that allows users to test their arithmetic skills, track their answer streaks, and view their performance.
 
-A fun and interactive math quiz built with Node.js and Express.js! 🎯
+📖 Features
 
+✅ Home Page – Start a new quiz, view the last recorded streak.
+✅ Quiz Page – Randomly generated math questions (addition, subtraction, multiplication, division).
+✅ Answer Validation – Check if the answer is correct and update the streak.
+✅ Statistics Page – Display last and current streaks.
+✅ In-Memory Data Storage – Keeps track of user scores while the server is running.
+✅ Unit Tests – Ensure question generation and answer validation are accurate.
 
+🚀 Installation & Setup
 
-📌 Project Description
-
-This is a simple math quiz web application where users can test their arithmetic skills. The app dynamically generates math questions and tracks the user’s streak. Built using Node.js, Express.js, and EJS templates, it offers a basic yet engaging experience.
-
-🚀 Features
-
-✅ Randomly generated math problems (+, -, ×, ÷)
-✅ Streak tracking for consecutive correct answers
-✅ Dynamic EJS-based UI with an improved modern design
-✅ User-friendly form submission
-✅ Fully responsive and mobile-friendly
-
-🛠️ Tech Stack
-
-Backend: Node.js, Express.js
-Frontend: HTML, CSS, EJS
-Testing: Jest (for unit testing)
-🎮 How to Run the Project Locally
-
-1️⃣ Clone the Repository
+Clone the Repository:
 git clone https://github.com/NSparkes95/fullstack-qap-2.git
 cd fullstack-qap-2
-2️⃣ Install Dependencies
+
+Install Dependencies:
 npm install
-3️⃣ Run the Server
+
+Start the Server:
 npm start
-Then, open http://localhost:3000/ in your browser.
+The app will run on http://localhost:3000
 
-📷 Screenshots
+🎮 How to Use
 
-🖼️ (Add screenshots of your quiz UI here!)
+Start the Quiz:
+Click "Start New Quiz" on the home page.
+A random math question will be displayed.
 
+Submit an Answer:
+Enter a numerical response and click Submit.
+If correct, the streak increases.
+If incorrect, the streak resets.
+
+View Statistics:
+Click "View Stats" to check current and past streaks.
+
+Restart Quiz:
+Click "Start New Quiz" to generate a new question.
+🛠️ Technologies Used
+
+Node.js & Express.js – Backend logic and server.
+EJS – Templating for dynamic content.
+CSS & HTML – Frontend styling and layout.
+JavaScript – Question generation and answer validation.
 🧪 Running Tests
 
-To run unit tests, use:
+Unit tests ensure functionality for question generation and answer validation. Run the tests using:
 
 npm test
-🌟 Future Improvements
+📌 Future Improvements
 
-Add difficulty levels (easy, medium, hard)
-Track user scores in a database
-Implement a leaderboard system
-Improve UI with animations
-🤝 Contributing
+🔹 Add persistent storage (e.g., database).
+🔹 Implement user authentication for multi-user support.
+🔹 Improve UI with animations.
 
-Contributions are welcome! Feel free to submit a PR. Before contributing, please check the Issues section.
+👨‍💻 Developed by: Nicole Sparkes
 
-📝 License
-
-This project is licensed under the MIT License.
-
-📩 Contact
-
-Nicole Sparkes
-📧 Email: (Add your email here, if comfortable sharing)
-🔗 GitHub: NSparkes95
-
-🚀 Ready to Challenge Your Math Skills? Try It Out Now!
-📌 Next Steps:
-
-Copy and paste this into README.md
-Modify it as needed
-Commit and push to GitHub! 🚀🔥
