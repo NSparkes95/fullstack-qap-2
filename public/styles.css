@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 body {
     font-family: Arial, sans-serif;
@@ -33,12 +32,6 @@ form {
 input {
     padding: 8px;
     font-size: 1.2em;
-=======
-/* Import a modern font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-body {
->>>>>>> 4a0ffb866a7f339dd14694e7ec0d6d59b8c1b837
     background: linear-gradient(135deg, #6a11cb, #2575fc);
     font-family: 'Poppins', sans-serif;
     display: flex;
@@ -102,8 +95,4 @@ button:hover {
     font-size: 18px;
     margin-top: 10px;
     font-weight: 400;
-<<<<<<< HEAD
-
-=======
->>>>>>> 4a0ffb866a7f339dd14694e7ec0d6d59b8c1b837
 }
