@@ -1,4 +1,5 @@
 <!--
+<<<<<<< HEAD
 Description: This file contains the HTML for the quiz page. It displays the current streak and a math question for the user to answer. The user can input their answer and submit it to the server. The user can also navigate back to the home page.
 Author: Nicole Sparkes
 Date: 02-12-2025
@@ -20,3 +21,32 @@ Date: 02-12-2025
 
 
 
+=======
+Description:
+Author: Nicole Sparkes
+Date:
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Math Quiz</h1>
+        <p class="question"><strong>Question:</strong> <%= question %></p>
+
+        <form action="/submit" method="POST">
+            <input type="number" name="answer" step="any" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        <p class="streak">Current Streak: <%= streak %></p>
+    </div>
+</body>
+</html>
+>>>>>>> 4a0ffb866a7f339dd14694e7ec0d6d59b8c1b837
