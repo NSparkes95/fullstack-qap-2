@@ -1,3 +1,7 @@
+// Description: This file contains the main server code for the math quiz application.
+// Author: Nicole Sparkes
+// Date: 02-12-2025
+
 const express = require('express');
 const fs = require('fs');
 const path = require('path');

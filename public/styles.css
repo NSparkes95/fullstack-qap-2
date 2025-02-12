@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -31,4 +32,68 @@ form {
 input {
     padding: 8px;
     font-size: 1.2em;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.question {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 10px;
+    width: 80px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+}
+
+button {
+    background: #ffffff;
+    color: #2575fc;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #2575fc;
+    color: #fff;
+}
+
+.streak {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: 400;
+
 }
